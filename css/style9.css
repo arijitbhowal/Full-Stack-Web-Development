@@ -68,3 +68,9 @@
   .footer .logo{
     justify-content: center;
   }
+
+  .main-content .card:hover {
+      transform: scale(1.05); /* Increase the size by 5% on hover */
+      transition: transform 0.3s ease; /* Add a smooth transition effect */
+
+  }
