@@ -1,192 +1,165 @@
-html, body {
-    overflow-x: hidden;
+html,
+body {
+  overflow-x: hidden;
+}
+
+.top-bar {
+  position: relative;
+  height: 90px;
+  background: #fdbe33;
+}
+
+.top-bar .logo h1 {
+  margin: 0;
+  color: #030f27;
+  font-size: 60px;
+  line-height: 60px;
+  font-weight: 700;
+}
+
+.top-bar .top-bar-item {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.top-bar .top-bar-icon {
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+}
+
+.top-bar .top-bar-text h3 {
+  margin: 0 0 5px 0;
+  color: #030f27;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.top-bar .top-bar-text p {
+  margin: 0;
+  color: #030f27;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+@media (min-width: 992px) {
+  .top-bar {
+    padding: 0 60px;
   }
-  
-        .top-bar {
-          position: relative;
-          height: 90px;
-          background: #fdbe33;
-        }
-  
-        .top-bar .logo {
-          padding: 15px 0;
-          text-align: left;
-          overflow: hidden;
-        }
-  
-        .top-bar .logo h1 {
-          margin: 0;
-          color: #030f27;
-          font-size: 60px;
-          line-height: 60px;
-          font-weight: 700;
-        }
-  
-        .top-bar .top-bar-item {
-          display: flex;
-          align-items: center;
-          justify-content: flex-end;
-        }
-  
-        .top-bar .top-bar-icon {
-          width: 40px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          font-size: 32px; /* Increase the font size to make icons bigger */
-        }
-  
-        .top-bar .top-bar-text {
-          padding-left: 15px;
-        }
-  
-        .top-bar .top-bar-text h3 {
-          margin: 0 0 5px 0;
-          color: #030f27;
-          font-size: 16px;
-          font-weight: 400;
-        }
-  
-        .top-bar .top-bar-text p {
-          margin: 0;
-          color: #030f27;
-          font-size: 13px;
-          font-weight: 400;
-        }
-  
-        @media (min-width: 992px) {
-          .top-bar {
-            padding: 0 60px;
-          }
-        }
-  
-        @media (max-width: 991.98px) {
-          .top-bar .logo {
-            text-align: center;
-          }
-        }
-  
-  .image-container {
-    width: 100%; /* Set container width to 100% of the viewport width */
-    max-height: calc(100vh - 90px); /* Set max height to the viewport height minus the navbar height */
-    position: relative; /* Add relative positioning for child elements */
-  }
-  
-  /* Custom CSS for the fixed image */
-  .image {
-    width: 100%; /* Set image width to 100% */
-    height: auto; /* Allow the image to maintain its aspect ratio */
-    object-fit: cover; /* Maintain aspect ratio and cover the whole container */
-    object-position: center; /* Center the image horizontally and vertically */
-    overflow: hidden; /* Prevent image overflow */
-  }
-  
-  /* Custom CSS for the centered text with the image */
+}
+
+.image-container {
+  width: 100%;
+  max-height: calc(100vh - 90px);
+  position: relative;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  object-position: center;
+  overflow: hidden;
+}
+
+.centered-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(3, 15, 39, 0);
+  color: #ffffff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  text-align: center;
+  max-width: 80%;
+  border-radius: 10px;
+  font-size: 3vw;
+}
+
+.centered-text h1 {
+  font-family: "Anton", sans-serif;
+  font-size: 3.5vw;
+  margin-bottom: 20px;
+}
+
+.centered-text p {
+  font-size: 2vw;
+  margin: 0;
+}
+
+@media (max-width: 767px) {
   .centered-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: rgba(3, 15, 39, 0); /* Transparent background color */
-    color: #ffffff; /* Text color */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Text shadow to make it visible */
-    padding: 20px; /* Padding around the text */
-    text-align: center; /* Center-align the text */
-    max-width: 80%; /* Limit text width */
-    border-radius: 10px; /* Rounded corners */
-    
-    
+    font-size: 6vw;
   }
-  
+
   .centered-text h1 {
-    font-family: 'Anton', sans-serif;
-    font-size: 50px;; /* Font size for the heading */
-    margin-bottom: 20px; /* Spacing below the heading */
+    font-size: 7vw;
   }
-  
+
   .centered-text p {
-    font-size: 25px; /* Font size for the paragraph */
-    margin: 0; /* Remove default margins */
+    font-size: 4vw;
   }
-  
-        .custom-navbar {
-          background-color: #030f27; /* Your custom navy blue color */
-          border-left: 60px solid #fdbe33; /* Left border in yellow */
-          border-right: 60px solid #fdbe33; /* Right border in yellow */
-        }
-  
-        .navbar-nav .nav-link {
-          color: #ffffff; /* White Text Color */
-          padding: 10px 20px; /* Padding */
-        }
-  
-        .navbar-nav .nav-link:hover {
-          color: #fdbe33; /* Yellow Text Color on Hover */
-        }
-        .btn-primary {
-          background-color: #030f27; /* Navy Blue Background Color */
-          border-color: #fff; /* White Border Color */
-          color: #fff; /* White Text Color */
-        }
-        .btn-primary:hover{
-            background-color: #fdbe33; /* Navy Blue Background Color */
-            border-color: #030f27; /* White Border Color */
-            color: #030f27; /* White Text Color */
-        }
-  .card-title {
-    font-size: 24px; /* Title font size */
-    font-weight: 600; /* Title font weight */
-    margin-top: 20px; /* Spacing above the title */
-  }
-  
-  .card-text {
-    font-size: 18px; /* Text font size */
-    margin-bottom: 20px; /* Spacing below the text */
-  }
-  
-  /* Custom CSS for icons */
-  .card i {
-    font-size: 72px; /* Icon font size */
-    color: #fdbe33; /* Yellow icon color */
-  }
-  
-  /* Apply alternating background colors */
-  .card:nth-child(odd) {
-    background-color: #030f27; /* Navy blue background color for odd-numbered cards */
-  }
-  
-  .card:nth-child(even) {
-    background-color: #fdbe33; /* Yellow background color for even-numbered cards */
-  }
-  
-  /* Style the "Quality Work" card */
-  .card:nth-child(2) {
-    background-color: #fdbe33; /* Yellow background color for the second card (Quality Work) */
-    color: #030f27; /* Navy text color for the second card (Quality Work) */
-  }
-  
-  /* Remove margin and padding from the section */
-  .container-fluid {
-    margin: 0;
-    padding: 0;
-  }
-  .blue-bg{
-    background-color: #030f27;
-    font-size: 72px; /* Icon font size */
-    color:#fdbe33 ; /* Yellow icon color */
-    font-size: 24px; /* Title font size */
-    font-weight: 600; /* Title font weight */
-    padding: 30px; /* Add some padding to cards */
-  }
-  .yellow-bg{
-    background-color: #fdbe33;
-    font-size: 72px; /* Icon font size */
-    color: #030f27; /* Yellow icon color */
-    font-size: 24px; /* Title font size */
-    font-weight: 600; /* Title font weight */
-    padding: 30px; /* Add some padding to cards */
-  }
-  .navbar-dark .navbar-nav .dropdown-menu {
-    background-color: #030f27;
-    color: #fff;
+}
+
+.custom-navbar {
+  background-color: #030f27;
+  border-left: 60px solid #fdbe33;
+  border-right: 60px solid #fdbe33;
+}
+
+.navbar-nav .nav-link {
+  color: #ffffff;
+  padding: 10px 20px;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #fdbe33;
+}
+
+.btn-primary {
+  background-color: #030f27;
+  border-color: #fff;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background-color: #fdbe33;
+  border-color: #030f27;
+  color: #030f27;
+}
+
+.card-title {
+  font-size: 24px;
+  font-weight: 600;
+  margin-top: 20px;
+}
+
+.card-text {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.container-fluid {
+  margin: 0;
+  padding: 0;
+}
+
+.blue-bg {
+  background-color: #030f27;
+  font-size: 72px;
+  color: #fdbe33;
+  font-weight: 600;
+  padding: 30px;
+}
+
+.yellow-bg {
+  background-color: #fdbe33;
+  font-size: 72px;
+  color: #030f27;
+  font-weight: 600;
+  padding: 30px;
 }
