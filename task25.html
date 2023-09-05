@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Train Animation</title>
+    <style>
+        .container {
+            width: 80%; /* Set the width of the container */
+            margin: 20px auto;
+            text-align: center;
+            overflow: hidden;
+            position: relative; /* Add position relative to contain the train */
+        }
+
+        .train {
+            width: 200px;
+            height: auto;
+            position: absolute;
+            left: 0; /* Initially, position the train to the extreme left */
+        }
+
+        .controls {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 0 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img class="train" src="train.jpg" alt="Moving Train">
+    </div>
+    <div class="controls">
+        <button id="startButton">Start</button>
+        <button id="stopButton" disabled>Stop</button>
+    </div>
+    <script>
+        const train = document.querySelector(".train");
+        const startButton = document.getElementById("startButton");
+        const stopButton = document.getElementById("stopButton");
+        let animationId;
+        let position = 0; // Initially set the position to the extreme left
+        const speed = 2; // Adjust this value to control animation speed (lower values are faster)
+
+        function moveTrain() {
+            position += speed;
+            train.style.left = position + "px";
+
+            // Check if the train has moved out of the container
+            if (position > document.querySelector(".container").offsetWidth) {
+                position = -train.width;
+            }
+
+            animationId = requestAnimationFrame(moveTrain);
+        }
+
+        startButton.addEventListener("click", () => {
+            // Start the animation
+            moveTrain();
+            startButton.disabled = true;
+            stopButton.disabled = false;
+        });
+
+        stopButton.addEventListener("click", () => {
+            // Stop the animation
+            cancelAnimationFrame(animationId);
+            startButton.disabled = false;
+            stopButton.disabled = true;
+        });
+    </script>
+</body>
+</html>
